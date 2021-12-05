@@ -1,33 +1,34 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/Domo929/AOC-2021/days/day_1"
 	"github.com/Domo929/AOC-2021/days/day_2"
 	"github.com/Domo929/AOC-2021/days/day_3"
+	"github.com/Domo929/AOC-2021/days/day_4"
 )
 
 var (
-	files = []string{
-		"inputs/day_1_ex.tsv", //0
-		"inputs/day_1_act.tsv",
-		"inputs/day_2_ex.tsv",
-		"inputs/day_2_act.tsv",
-		"inputs/day_3_ex.tsv",
-		"inputs/day_3_act.tsv", //5
-	}
-
 	solvers = []func(string) error{
 		func(s string) error { return nil },
 		day_1.Solve,
 		day_2.Solve,
 		day_3.Solve,
+		day_4.Solve,
 	}
 
-	day = 3
+	day   = 4
+	isAct = true
 )
 
 func main() {
-	err := solvers[day](files[5])
+	suffix := "_ex.tsv"
+	if isAct {
+		suffix = "_act.tsv"
+	}
+	filename := fmt.Sprintf("inputs/day_%d%s", day, suffix)
+	err := solvers[day](filename)
 	if err != nil {
 		panic(err)
 	}
