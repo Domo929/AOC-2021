@@ -9,6 +9,7 @@ import (
 	"github.com/Domo929/AOC-2021/days/day_4"
 	"github.com/Domo929/AOC-2021/days/day_5"
 	"github.com/Domo929/AOC-2021/days/day_6"
+	"github.com/Domo929/AOC-2021/days/day_7"
 )
 
 var (
@@ -20,9 +21,10 @@ var (
 		day_4.Solve,
 		day_5.Solve,
 		day_6.Solve,
+		day_7.Solve,
 	}
 
-	day   = 6
+	day   = 7
 	isAct = true
 )
 
